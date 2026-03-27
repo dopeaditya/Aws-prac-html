@@ -3,68 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mental Health</title>
+<title>Sports</title>
 
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: Arial;
+  background: #0f2027;
   color: white;
-  overflow-x: hidden;
 }
 
-.container {
+.header {
   text-align: center;
-  padding: 100px 20px;
-  animation: fadeIn 2s ease-in;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  animation: slideDown 1.5s ease;
 }
 
 h1 {
   font-size: 3rem;
 }
 
-p {
-  max-width: 600px;
-  margin: 20px auto;
-  line-height: 1.6;
-  opacity: 0.9;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  padding: 40px;
 }
 
-.card {
-  margin-top: 40px;
-  padding: 20px;
-  border-radius: 15px;
+.box {
   background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
   transition: 0.3s;
 }
 
-.card:hover {
-  transform: scale(1.05);
+.box:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.2);
 }
 
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
+@keyframes slideDown {
+  from {transform: translateY(-50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-  <h1>🧠 Mental Health Matters</h1>
-  <p>Your mental well-being is just as important as your physical health. Take time to rest, reflect, and heal.</p>
+<div class="header">
+  <h1>⚽ Sports Energy</h1>
+  <p>Push your limits. Break your barriers.</p>
+</div>
 
-  <div class="card">
-    <h2>Self Care</h2>
-    <p>Take breaks, meditate, and allow yourself to breathe.</p>
+<div class="grid">
+  <div class="box">
+    <h2>Football</h2>
+    <p>Teamwork and passion define the game.</p>
   </div>
 
-  <div class="card">
-    <h2>Talk It Out</h2>
-    <p>Sharing your thoughts can lighten your emotional load.</p>
+  <div class="box">
+    <h2>Cricket</h2>
+    <p>Strategy, patience, and precision.</p>
+  </div>
+
+  <div class="box">
+    <h2>Tennis</h2>
+    <p>Speed, focus, and mental strength.</p>
   </div>
 </div>
 
