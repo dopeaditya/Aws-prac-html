@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happiness</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI';
+  background: linear-gradient(to right, #f7971e, #ffd200);
+  color: #333;
+}
+
+.container {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  animation: pop 1.5s ease;
+}
+
+.quote {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 250px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.1) rotate(2deg);
+}
+
+@keyframes pop {
+  0% {transform: scale(0.5); opacity: 0;}
+  100% {transform: scale(1); opacity: 1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>😊 Choose Happiness</h1>
+  <p class="quote">Happiness is not something ready made. It comes from your actions.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Gratitude</h3>
+      <p>Appreciate the little things in life.</p>
+    </div>
+
+    <div class="card">
+      <h3>Kindness</h3>
+      <p>Spread positivity wherever you go.</p>
+    </div>
+
+    <div class="card">
+      <h3>Peace</h3>
+      <p>Find calm within yourself.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

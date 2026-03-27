@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sports</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f2027;
+  color: white;
+}
+
+.header {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  animation: slideDown 1.5s ease;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.box {
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.2);
+}
+
+@keyframes slideDown {
+  from {transform: translateY(-50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>⚽ Sports Energy</h1>
+  <p>Push your limits. Break your barriers.</p>
+</div>
+
+<div class="grid">
+  <div class="box">
+    <h2>Football</h2>
+    <p>Teamwork and passion define the game.</p>
+  </div>
+
+  <div class="box">
+    <h2>Cricket</h2>
+    <p>Strategy, patience, and precision.</p>
+  </div>
+
+  <div class="box">
+    <h2>Tennis</h2>
+    <p>Speed, focus, and mental strength.</p>
+  </div>
+</div>
+
+</body>
+</html>
