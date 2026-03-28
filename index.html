@@ -3,169 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cloud Computing</title>
+<title>Jungle Vibes</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+:root{
+  --dark:#071e14;
+  --green:#14532d;
+  --light:#22c55e;
+  --leaf:#4ade80;
 }
 
-body {
-  background: linear-gradient(to top, #1e3c72, #2a5298);
-  color: white;
-  overflow-x: hidden;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:sans-serif;
 }
 
-/* FLOATING CLOUDS */
-.cloud {
-  position: absolute;
-  width: 200px;
-  height: 60px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 50px;
-  filter: blur(10px);
-  animation: float 20s linear infinite;
+body{
+  background: radial-gradient(circle at top,#0b3d2e,#041a14);
+  color:#eaffea;
+  overflow-x:hidden;
 }
 
-.cloud::before,
-.cloud::after {
-  content: '';
-  position: absolute;
-  background: inherit;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+/* floating leaves */
+.leaf{
+  position:absolute;
+  width:20px;
+  height:20px;
+  background:var(--leaf);
+  border-radius:50% 0 50% 0;
+  opacity:0.6;
+  animation:fall linear infinite;
 }
 
-.cloud::before {
-  top: -40px;
-  left: 20px;
+@keyframes fall{
+  from{transform:translateY(-100px) rotate(0deg);} 
+  to{transform:translateY(110vh) rotate(360deg);} 
 }
 
-.cloud::after {
-  top: -20px;
-  right: 20px;
+/* tree shapes */
+.tree{
+  position:absolute;
+  bottom:0;
+  width:120px;
+  height:200px;
 }
 
-.cloud1 { top: 100px; left: -200px; animation-delay: 0s; }
-.cloud2 { top: 300px; left: -250px; animation-delay: 5s; }
-.cloud3 { top: 500px; left: -300px; animation-delay: 10s; }
-
-@keyframes float {
-  from { transform: translateX(0); }
-  to { transform: translateX(120vw); }
+.trunk{
+  width:20px;
+  height:100px;
+  background:#3f2a14;
+  margin:auto;
 }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-  animation: fadeIn 2s ease;
+.leaves{
+  width:120px;
+  height:120px;
+  background:radial-gradient(circle,#166534,#052e16);
+  border-radius:50%;
+  margin-top:-40px;
+  animation:sway 4s ease-in-out infinite;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  background: linear-gradient(to right, #00c6ff, #ffffff);
-  -webkit-background-clip: text;
-  color: transparent;
+@keyframes sway{
+  0%,100%{transform:rotate(0deg);} 
+  50%{transform:rotate(5deg);} 
 }
 
-.hero p {
-  margin-top: 20px;
-  opacity: 0.8;
+header{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-/* CARDS */
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 25px;
-  padding: 50px;
+h1{
+  font-size:3.5rem;
+  letter-spacing:4px;
+  color:#a7f3d0;
+  animation:glow 2s infinite alternate;
 }
 
-.card {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(12px);
-  padding: 25px;
-  border-radius: 15px;
-  transition: 0.4s;
-  animation: slideUp 1.5s ease;
+@keyframes glow{
+  from{text-shadow:0 0 10px #22c55e;} 
+  to{text-shadow:0 0 30px #4ade80;} 
 }
 
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-  background: rgba(255,255,255,0.2);
+.subtitle{
+  margin-top:10px;
+  opacity:0.7;
 }
 
-.card h2 {
-  margin-bottom: 10px;
-  color: #00c6ff;
+.section{
+  padding:80px 20px;
+  text-align:center;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  opacity: 0.7;
+.cards{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  margin-top:40px;
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+.card{
+  width:250px;
+  padding:20px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.1);
+  transition:0.4s;
 }
 
-@keyframes slideUp {
-  from {transform: translateY(40px); opacity: 0;}
-  to {transform: translateY(0); opacity: 1;}
+.card:hover{
+  transform:translateY(-12px) scale(1.05);
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
 }
+
+footer{
+  text-align:center;
+  padding:30px;
+  opacity:0.6;
+}
+
 </style>
 </head>
-
 <body>
 
-<!-- CLOUD ANIMATION -->
-<div class="cloud cloud1"></div>
-<div class="cloud cloud2"></div>
-<div class="cloud cloud3"></div>
+<!-- Leaves -->
+<script>
+for(let i=0;i<25;i++){
+  const leaf=document.createElement('div');
+  leaf.className='leaf';
+  leaf.style.left=Math.random()*100+'vw';
+  leaf.style.animationDuration=(5+Math.random()*5)+'s';
+  document.body.appendChild(leaf);
+}
+</script>
 
-<!-- HERO -->
-<section class="hero">
-  <h1>☁️ Cloud Computing</h1>
-  <p>Powering the future with scalable, flexible, and efficient solutions</p>
-</section>
-
-<!-- CONTENT -->
-<div class="container">
-
-  <div class="card">
-    <h2>What is Cloud?</h2>
-    <p>Cloud computing delivers computing services like storage, servers, and databases over the internet.</p>
-  </div>
-
-  <div class="card">
-    <h2>Scalability</h2>
-    <p>Easily scale resources up or down based on demand without managing physical infrastructure.</p>
-  </div>
-
-  <div class="card">
-    <h2>Cost Efficient</h2>
-    <p>Pay only for what you use, reducing operational and maintenance costs significantly.</p>
-  </div>
-
-  <div class="card">
-    <h2>Security</h2>
-    <p>Advanced security protocols ensure your data is protected across global data centers.</p>
-  </div>
-
+<!-- Trees -->
+<div class="tree" style="left:5%">
+  <div class="leaves"></div>
+  <div class="trunk"></div>
 </div>
 
-<!-- FOOTER -->
+<div class="tree" style="left:80%">
+  <div class="leaves"></div>
+  <div class="trunk"></div>
+</div>
+
+<header>
+  <h1>JUNGLE</h1>
+  <p class="subtitle">alive • wild • green</p>
+</header>
+
+<section class="section">
+  <h2>Nature Elements</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Trees</h3>
+      <p>strong roots deep in earth</p>
+    </div>
+
+    <div class="card">
+      <h3>Leaves</h3>
+      <p>flowing with wind and life</p>
+    </div>
+
+    <div class="card">
+      <h3>Wild</h3>
+      <p>nature free and untamed</p>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <p>© 2026 Cloud Tech</p>
+  jungle vibes 🌿
 </footer>
 
 </body>
