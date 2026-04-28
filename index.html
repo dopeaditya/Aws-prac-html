@@ -1,166 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dashboard</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<title>SmartApp Landing Page</title>
 
-    body {
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      min-height: 100vh;
-      color: #fff;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
 
-    .container {
-      padding: 30px;
-    }
+body {
+  background: linear-gradient(120deg, #1f1c2c, #928dab);
+  color: white;
+}
 
-    h1 {
-      margin-bottom: 20px;
-    }
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
 
-    /* Stats Cards */
-    .stats {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 30px;
-    }
+nav h2 {
+  font-weight: bold;
+}
 
-    .card {
-      flex: 1;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      text-align: center;
-    }
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
 
-    .card h2 {
-      font-size: 28px;
-    }
+nav ul li {
+  cursor: pointer;
+}
 
-    .card p {
-      opacity: 0.8;
-    }
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 50px;
+}
 
-    /* Table */
-    .table-container {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 12px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    }
+.hero-text {
+  max-width: 500px;
+}
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
+.hero-text h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
 
-    th, td {
-      padding: 12px;
-      text-align: left;
-    }
+.hero-text p {
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
 
-    th {
-      background: rgba(255,255,255,0.2);
-    }
+.hero-text button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #ff7e5f;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
 
-    tr:nth-child(even) {
-      background: rgba(255,255,255,0.05);
-    }
+.hero img {
+  width: 400px;
+}
 
-    tr:hover {
-      background: rgba(255,255,255,0.2);
-      transition: 0.3s;
-    }
+/* Features */
+.features {
+  padding: 50px;
+  text-align: center;
+}
 
-    .status {
-      padding: 5px 10px;
-      border-radius: 8px;
-      font-size: 12px;
-    }
+.features h2 {
+  margin-bottom: 30px;
+}
 
-    .active {
-      background: #00c853;
-    }
+.feature-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
 
-    .inactive {
-      background: #d50000;
-    }
-  </style>
+.card {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  opacity: 0.7;
+}
+</style>
+
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>Dashboard</h1>
+<!-- Navbar -->
+<nav>
+  <h2>SmartApp</h2>
+  <ul>
+    <li>Home</li>
+    <li>Features</li>
+    <li>Contact</li>
+  </ul>
+</nav>
 
-    <!-- Stats -->
-    <div class="stats">
-      <div class="card">
-        <h2>120</h2>
-        <p>Total Users</p>
-      </div>
-      <div class="card">
-        <h2>85</h2>
-        <p>Active Users</p>
-      </div>
-      <div class="card">
-        <h2>35</h2>
-        <p>Inactive Users</p>
-      </div>
-    </div>
-
-    <!-- Table -->
-    <div class="table-container">
-      <h2>User List</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Aditya</td>
-            <td>aditya@gmail.com</td>
-            <td><span class="status active">Active</span></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Rahul</td>
-            <td>rahul@gmail.com</td>
-            <td><span class="status inactive">Inactive</span></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Sneha</td>
-            <td>sneha@gmail.com</td>
-            <td><span class="status active">Active</span></td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Anjali</td>
-            <td>anjali@gmail.com</td>
-            <td><span class="status active">Active</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Manage Your Tasks Efficiently</h1>
+    <p>A simple and powerful tool to organize your daily work and boost productivity.</p>
+    <button>Get Started</button>
   </div>
+  <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="app">
+</section>
+
+<!-- Features -->
+<section class="features">
+  <h2>Features</h2>
+  <div class="feature-cards">
+    <div class="card">
+      <h3>Easy to Use</h3>
+      <p>Simple interface for everyone.</p>
+    </div>
+    <div class="card">
+      <h3>Fast Performance</h3>
+      <p>Optimized for speed and efficiency.</p>
+    </div>
+    <div class="card">
+      <h3>Secure</h3>
+      <p>Your data is safe and protected.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2026 SmartApp. All rights reserved.
+</footer>
 
 </body>
 </html>
