@@ -1,162 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>SmartApp Landing Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ocean Theme</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-body {
-  background: linear-gradient(120deg, #1f1c2c, #928dab);
-  color: white;
-}
+    body {
+      overflow-x: hidden;
+      color: white;
+      scroll-behavior: smooth;
+    }
 
-/* Navbar */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 50px;
-}
+    /* 🌊 Animated Ocean Gradient */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        #001f3f,
+        #0074D9,
+        #00c6ff,
+        #001f3f
+      );
+      background-size: 400% 400%;
+      animation: oceanFlow 12s ease infinite;
+      z-index: -2;
+    }
 
-nav h2 {
-  font-weight: bold;
-}
+    @keyframes oceanFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-nav ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-}
+    /* 🫧 Floating bubbles */
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      animation: rise linear infinite;
+    }
 
-nav ul li {
-  cursor: pointer;
-}
+    @keyframes rise {
+      from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-120vh) scale(1.5);
+        opacity: 0;
+      }
+    }
 
-/* Hero Section */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 60px 50px;
-}
+    header {
+      text-align: center;
+      padding: 80px 20px;
+    }
 
-.hero-text {
-  max-width: 500px;
-}
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+      animation: fadeIn 2s ease;
+    }
 
-.hero-text h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
-}
+    header p {
+      margin-top: 10px;
+      opacity: 0.8;
+    }
 
-.hero-text p {
-  margin-bottom: 20px;
-  opacity: 0.8;
-}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
 
-.hero-text button {
-  padding: 12px 25px;
-  border: none;
-  border-radius: 8px;
-  background: #ff7e5f;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-}
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-.hero img {
-  width: 400px;
-}
+    .card {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      transition: 0.4s;
+    }
 
-/* Features */
-.features {
-  padding: 50px;
-  text-align: center;
-}
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      background: rgba(255,255,255,0.2);
+    }
 
-.features h2 {
-  margin-bottom: 30px;
-}
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #00c6ff;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-.feature-cards {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
+    button:hover {
+      background: #0074D9;
+      transform: scale(1.1);
+    }
 
-.card {
-  background: rgba(255,255,255,0.1);
-  padding: 20px;
-  border-radius: 12px;
-  width: 250px;
-}
-
-.card h3 {
-  margin-bottom: 10px;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  opacity: 0.7;
-}
-</style>
-
+    footer {
+      text-align: center;
+      padding: 20px;
+      opacity: 0.7;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
-<nav>
-  <h2>SmartApp</h2>
-  <ul>
-    <li>Home</li>
-    <li>Features</li>
-    <li>Contact</li>
-  </ul>
-</nav>
+  <!-- 🫧 Bubbles -->
+  <div class="bubble" style="left:10%; width:20px; height:20px; animation-duration:8s;"></div>
+  <div class="bubble" style="left:30%; width:15px; height:15px; animation-duration:10s;"></div>
+  <div class="bubble" style="left:50%; width:25px; height:25px; animation-duration:7s;"></div>
+  <div class="bubble" style="left:70%; width:18px; height:18px; animation-duration:9s;"></div>
+  <div class="bubble" style="left:90%; width:22px; height:22px; animation-duration:11s;"></div>
 
-<!-- Hero Section -->
-<section class="hero">
-  <div class="hero-text">
-    <h1>Manage Your Tasks Efficiently</h1>
-    <p>A simple and powerful tool to organize your daily work and boost productivity.</p>
-    <button>Get Started</button>
-  </div>
-  <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="app">
-</section>
+  <!-- 🌊 Header -->
+  <header>
+    <h1>Deep Ocean World</h1>
+    <p>Explore the calm, beauty, and mystery of the sea</p>
+    <button onclick="scrollToSection()">Explore</button>
+  </header>
 
-<!-- Features -->
-<section class="features">
-  <h2>Features</h2>
-  <div class="feature-cards">
+  <!-- 🌊 Content -->
+  <section id="content">
     <div class="card">
-      <h3>Easy to Use</h3>
-      <p>Simple interface for everyone.</p>
+      <h2>🌊 Serenity</h2>
+      <p>The ocean teaches us calmness and depth.</p>
     </div>
-    <div class="card">
-      <h3>Fast Performance</h3>
-      <p>Optimized for speed and efficiency.</p>
-    </div>
-    <div class="card">
-      <h3>Secure</h3>
-      <p>Your data is safe and protected.</p>
-    </div>
-  </div>
-</section>
 
-<!-- Footer -->
-<footer>
-  © 2026 SmartApp. All rights reserved.
-</footer>
+    <div class="card">
+      <h2>🐠 Life</h2>
+      <p>Millions of species live beneath the waves.</p>
+    </div>
+
+    <div class="card">
+      <h2>✨ Mystery</h2>
+      <p>More than 80% of the ocean is unexplored.</p>
+    </div>
+  </section>
+
+  <!-- 🌊 Footer -->
+  <footer>
+    <p>Made with 💙 Ocean Vibes</p>
+  </footer>
+
+  <script>
+    function scrollToSection() {
+      document.getElementById("content").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  </script>
 
 </body>
 </html>
